@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Tameer-e-Millat</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-logo">
+
+        <img src="image/download.jpg">
+
+        <div>
+
+            <strong>Tameer-e-Millat</strong>
+
+            <span>Student Portal</span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="dashboard-nav">
+
+        <button class="nav-item active"
+                onclick="showStudentSection('overview', this)">
+
+            🏠
+            <span>Dashboard</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showStudentSection('attendance', this)">
+
+            ✅
+            <span>Attendance</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showStudentSection('timetable', this)">
+
+            📅
+            <span>Timetable</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showStudentSection('assignments', this)">
+
+            📝
+            <span>Assignments</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showStudentSection('results', this)">
+
+            🏆
+            <span>Results</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showStudentSection('announcements', this)">
+
+            📢
+            <span>Announcements</span>
+
+        </button>
+
+    </nav>
+
+
+    <button class="logout-btn"
+            onclick="logout()">
+
+        🚪 Logout
+
+    </button>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="dashboard-main">
+
+
+    <header class="dashboard-header">
+
+        <button class="dashboard-menu"
+                onclick="toggleSidebar()">
+
+            ☰
+
+        </button>
+
+
+        <div>
+
+            <h2 id="pageTitle">
+                Student Dashboard
+            </h2>
+
+            <p>
+                Welcome back, Ahmad!
+            </p>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button onclick="toggleDarkMode()">
+                🌙
+            </button>
+
+            <div class="user-mini">
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>Ahmad Khan</strong>
+
+                    <small>
+                        Class 10-A
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- OVERVIEW -->
+
+    <section id="student-overview"
+             class="dashboard-section active">
+
+
+        <div class="welcome-card">
+
+            <div>
+
+                <span>
+                    STUDENT PORTAL
+                </span>
+
+                <h1>
+                    Good Evening, Awwaleen! 👋
+                </h1>
+
+                <p>
+                    Here's what's happening with
+                    your studies today.
+                </p>
+
+            </div>
+
+            <div class="welcome-icon">
+                🎓
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-cards">
+
+
+            <div class="dash-card blue">
+
+                <span>Attendance</span>
+
+                <h2>98%</h2>
+
+                <p>
+                    Excellent attendance
+                </p>
+
+                <div class="progress">
+                    <div style="width:92%"></div>
+                </div>
+
+            </div>
+
+
+            <div class="dash-card green">
+
+                <span>Average Result</span>
+
+                <h2>98%</h2>
+
+                <p>
+                    Great performance
+                </p>
+
+                <div class="progress">
+                    <div style="width:87%"></div>
+                </div>
+
+            </div>
+
+
+            <div class="dash-card orange">
+
+                <span>Assignments</span>
+
+                <h2>10/10</h2>
+
+                <p>
+                    Completed
+                </p>
+
+                <div class="progress">
+                    <div style="width:80%"></div>
+                </div>
+
+            </div>
+
+
+            <div class="dash-card purple">
+
+                <span>Class Rank</span>
+
+                <h2>#1</h2>
+
+                <p>
+                    Out of 32 students
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h3>
+                        Upcoming Assignments
+                    </h3>
+
+                    <button onclick="showStudentSection('assignments')">
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div class="assignment-list">
+
+
+                    <div class="assignment-item">
+
+                        <div class="subject-icon blue-icon">
+                            📐
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Mathematics Project
+                            </strong>
+
+                            <small>
+                                Due: 7 september 2026
+                            </small>
+
+                        </div>
+
+                        <span class="badge pending">
+                            Pending
+                        </span>
+
+                    </div>
+
+
+                    <div class="assignment-item">
+
+                        <div class="subject-icon green-icon">
+                            🧪
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Biology Assignment
+                            </strong>
+
+                            <small>
+                                Due: 10 september 2026
+                            </small>
+
+                        </div>
+
+                        <span class="badge submitted">
+                            Submitted
+                        </span>
+
+                    </div>
+
+
+                    <div class="assignment-item">
+
+                        <div class="subject-icon purple-icon">
+                            📖
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                English Essay
+                            </strong>
+
+                            <small>
+                                Due: 02 September 2026
+                            </small>
+
+                        </div>
+
+                        <span class="badge pending">
+                            Pending
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h3>
+                        Latest Announcements
+                    </h3>
+
+                </div>
+
+
+                <div class="notice-list">
+
+                    <div class="notice">
+
+                        <span>📢</span>
+
+                        <div>
+
+                            <strong>
+                                Parent Teacher Meeting
+                            </strong>
+
+                            <small>
+                                25 August 2026
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notice">
+
+                        <span>📝</span>
+
+                        <div>
+
+                            <strong>
+                                Monthly Tests
+                            </strong>
+
+                            <small>
+                                Starting next week
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notice">
+
+                        <span>🏆</span>
+
+                        <div>
+
+                            <strong>
+                                Sports Day
+                            </strong>
+
+                            <small>
+                                Registration is open
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ATTENDANCE -->
+
+    <section id="student-attendance"
+             class="dashboard-section">
+
+        <div class="section-page-title">
+
+            <h2>Attendance</h2>
+
+            <p>
+                Your attendance record for the current session.
+            </p>
+
+        </div>
+
+
+        <div class="attendance-summary">
+
+            <div>
+
+                <span>Overall Attendance</span>
+
+                <strong>92%</strong>
+
+            </div>
+
+            <div>
+
+                <span>Present Days</span>
+
+                <strong>184</strong>
+
+            </div>
+
+            <div>
+
+                <span>Absent Days</span>
+
+                <strong>16</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h3>Monthly Attendance</h3>
+
+            <div class="attendance-chart">
+
+                <div>
+                    <span>Jan</span>
+                    <b style="height:90%"></b>
+                    <small>90%</small>
+                </div>
+
+                <div>
+                    <span>Feb</span>
+                    <b style="height:95%"></b>
+                    <small>95%</small>
+                </div>
+
+                <div>
+                    <span>Mar</span>
+                    <b style="height:88%"></b>
+                    <small>88%</small>
+                </div>
+
+                <div>
+                    <span>Apr</span>
+                    <b style="height:94%"></b>
+                    <small>94%</small>
+                </div>
+
+                <div>
+                    <span>May</span>
+                    <b style="height:92%"></b>
+                    <small>92%</small>
+                </div>
+
+                <div>
+                    <span>Jun</span>
+                    <b style="height:96%"></b>
+                    <small>96%</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TIMETABLE -->
+
+    <section id="student-timetable"
+             class="dashboard-section">
+
+        <div class="section-page-title">
+
+            <h2>Class Timetable</h2>
+
+            <p>
+                Class 10-A weekly timetable.
+            </p>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Day</th>
+                        <th>8:00 - 8:45</th>
+                        <th>8:45 - 9:30</th>
+                        <th>9:30 - 10:15</th>
+                        <th>10:45 - 11:30</th>
+                        <th>11:30 - 12:15</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+                        <td>Monday</td>
+                        <td>Math</td>
+                        <td>English</td>
+                        <td>Physics</td>
+                        <td>Urdu</td>
+                        <td>Computer</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>Biology</td>
+                        <td>Math</td>
+                        <td>English</td>
+                        <td>Physics</td>
+                        <td>Islamiat</td>
+                    </tr>
+
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>Computer</td>
+                        <td>Urdu</td>
+                        <td>Math</td>
+                        <td>Biology</td>
+                        <td>English</td>
+                    </tr>
+
+                    <tr>
+                        <td>Thursday</td>
+                        <td>Physics</td>
+                        <td>Math</td>
+                        <td>Computer</td>
+                        <td>English</td>
+                        <td>Biology</td>
+                    </tr>
+
+                    <tr>
+                        <td>Friday</td>
+                        <td>English</td>
+                        <td>Islamiat</td>
+                        <td>Math</td>
+                        <td>Physics</td>
+                        <td>Urdu</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ASSIGNMENTS -->
+
+    <section id="student-assignments"
+             class="dashboard-section">
+
+        <div class="section-page-title">
+
+            <h2>Assignments</h2>
+
+            <p>
+                View your current assignments.
+            </p>
+
+        </div>
+
+
+        <div class="assignment-cards">
+
+
+            <div class="assignment-card">
+
+                <span class="subject-tag math">
+                    Mathematics
+                </span>
+
+                <h3>
+                    Algebra Project
+                </h3>
+
+                <p>
+                    Complete exercises from chapter 5
+                    and prepare a short presentation.
+                </p>
+
+                <div>
+
+                    <small>
+                        Due: 28 August
+                    </small>
+
+                    <span class="badge pending">
+                        Pending
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="assignment-card">
+
+                <span class="subject-tag science">
+                    Biology
+                </span>
+
+                <h3>
+                    Human Digestive System
+                </h3>
+
+                <p>
+                    Prepare a labelled diagram and
+                    explanation.
+                </p>
+
+                <div>
+
+                    <small>
+                        Due: 30 August
+                    </small>
+
+                    <span class="badge submitted">
+                        Submitted
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="assignment-card">
+
+                <span class="subject-tag english">
+                    English
+                </span>
+
+                <h3>
+                    Essay Writing
+                </h3>
+
+                <p>
+                    Write an essay about the importance
+                    of education.
+                </p>
+
+                <div>
+
+                    <small>
+                        Due: 02 September
+                    </small>
+
+                    <span class="badge pending">
+                        Pending
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULTS -->
+
+    <section id="student-results"
+             class="dashboard-section">
+
+        <div class="section-page-title">
+
+            <h2>Academic Results</h2>
+
+            <p>
+                Your latest examination results.
+            </p>
+
+        </div>
+
+
+        <div class="result-overview">
+
+            <div>
+
+                <span>Overall Percentage</span>
+                <strong>87%</strong>
+
+            </div>
+
+            <div>
+
+                <span>Grade</span>
+                <strong>A</strong>
+
+            </div>
+
+            <div>
+
+                <span>Class Rank</span>
+                <strong>4th</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>Total</th>
+                        <th>Percentage</th>
+                        <th>Grade</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+                        <td>Mathematics</td>
+                        <td>88</td>
+                        <td>100</td>
+                        <td>88%</td>
+                        <td><span class="grade-a">A</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>English</td>
+                        <td>84</td>
+                        <td>100</td>
+                        <td>84%</td>
+                        <td><span class="grade-a">A</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Physics</td>
+                        <td>91</td>
+                        <td>100</td>
+                        <td>91%</td>
+                        <td><span class="grade-a">A+</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Biology</td>
+                        <td>86</td>
+                        <td>100</td>
+                        <td>86%</td>
+                        <td><span class="grade-a">A</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Urdu</td>
+                        <td>82</td>
+                        <td>100</td>
+                        <td>82%</td>
+                        <td><span class="grade-a">A</span></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ANNOUNCEMENTS -->
+
+    <section id="student-announcements"
+             class="dashboard-section">
+
+        <div class="section-page-title">
+
+            <h2>Announcements</h2>
+
+            <p>
+                Important school notifications.
+            </p>
+
+        </div>
+
+
+        <div class="announcement-list-dashboard">
+
+            <article>
+
+                <span>📢</span>
+
+                <div>
+
+                    <h3>
+                        Parent Teacher Meeting
+                    </h3>
+
+                    <p>
+                        Parents are requested to attend
+                        the meeting on 25 August 2026.
+                    </p>
+
+                    <small>
+                        20 August 2026
+                    </small>
+
+                </div>
+
+            </article>
+
+
+            <article>
+
+                <span>📝</span>
+
+                <div>
+
+                    <h3>
+                        Monthly Tests
+                    </h3>
+
+                    <p>
+                        Monthly tests will begin next week.
+                    </p>
+
+                    <small>
+                        18 August 2026
+                    </small>
+
+                </div>
+
+            </article>
+
+
+            <article>
+
+                <span>🏆</span>
+
+                <div>
+
+                    <h3>
+                        Annual Sports Day
+                    </h3>
+
+                    <p>
+                        Students can register with their
+                        class teacher.
+                    </p>
+
+                    <small>
+                        15 August 2026
+                    </small>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

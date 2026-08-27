@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Tameer-e-Millat</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body class="login-page">
+
+
+<div class="login-wrapper">
+
+
+    <div class="login-brand">
+
+        <a href="index.html" class="back-home">
+            ← Back to Website
+        </a>
+
+
+        <img src="image/download.jpg"
+             alt="Tameer-e-Millat Logo">
+
+
+        <h1>
+            Tameer-e-Millat
+        </h1>
+
+        <p>
+            Schooling System
+        </p>
+
+
+        <div class="login-welcome">
+
+            <h2>
+                Welcome Back!
+            </h2>
+
+            <p>
+                Login to access your school portal,
+                academic information and announcements.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="login-box">
+
+
+        <div class="login-tabs">
+
+            <button
+                class="login-tab active"
+                onclick="selectLoginType('student', this)">
+
+                🎓 Student
+
+            </button>
+
+
+            <button
+                class="login-tab"
+                onclick="selectLoginType('teacher', this)">
+
+                👨‍🏫 Teacher
+
+            </button>
+
+        </div>
+
+
+        <div class="login-heading">
+
+            <h2 id="loginTitle">
+                Student Login
+            </h2>
+
+            <p id="loginDescription">
+                Enter your student credentials to continue.
+            </p>
+
+        </div>
+
+
+        <form id="loginForm">
+
+
+            <input
+                type="hidden"
+                id="userType"
+                value="student">
+
+
+            <div class="input-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your username"
+                    required>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+
+                <div class="password-field">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required>
+
+                    <button
+                        type="button"
+                        onclick="togglePassword()">
+
+                        👁
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="login-options">
+
+                <label>
+
+                    <input type="checkbox">
+
+                    Remember me
+
+                </label>
+
+                <a href="#" onclick="showForgotPassword()">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-submit">
+
+                Login to Portal →
+
+            </button>
+
+
+            <div id="loginMessage"
+                 class="login-message">
+            </div>
+
+
+        </form>
+
+
+        <div class="demo-login">
+
+            <h4>
+                Demo Login
+            </h4>
+
+            <p>
+                <strong>Student:</strong>
+                student / 12345
+            </p>
+
+            <p>
+                <strong>Teacher:</strong>
+                teacher / 12345
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

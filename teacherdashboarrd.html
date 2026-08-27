@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard | Tameer-e-Millat</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-logo">
+
+        <img src="image/download.jpg">
+
+        <div>
+
+            <strong>Tameer-e-Millat</strong>
+
+            <span>Teacher Portal</span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="dashboard-nav">
+
+
+        <button class="nav-item active"
+                onclick="showTeacherSection('overview', this)">
+
+            🏠
+            <span>Dashboard</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showTeacherSection('attendance', this)">
+
+            ✅
+            <span>Attendance</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showTeacherSection('students', this)">
+
+            🎓
+            <span>Students</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showTeacherSection('assignments', this)">
+
+            📝
+            <span>Assignments</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showTeacherSection('results', this)">
+
+            🏆
+            <span>Results</span>
+
+        </button>
+
+
+        <button class="nav-item"
+                onclick="showTeacherSection('announcements', this)">
+
+            📢
+            <span>Announcements</span>
+
+        </button>
+
+
+    </nav>
+
+
+    <button class="logout-btn"
+            onclick="logout()">
+
+        🚪 Logout
+
+    </button>
+
+</aside>
+
+
+<main class="dashboard-main">
+
+
+<header class="dashboard-header">
+
+
+    <button class="dashboard-menu"
+            onclick="toggleSidebar()">
+
+        ☰
+
+    </button>
+
+
+    <div>
+
+        <h2 id="pageTitle">
+            Teacher Dashboard
+        </h2>
+
+        <p>
+            Welcome back, Mr. Ahmed!
+        </p>
+
+    </div>
+
+
+    <div class="header-actions">
+
+        <button onclick="toggleDarkMode()">
+            🌙
+        </button>
+
+
+        <div class="user-mini">
+
+            <div class="avatar teacher-avatar">
+                A
+            </div>
+
+            <div>
+
+                <strong>Mr. Ahmed Ali</strong>
+
+                <small>
+                    Mathematics Teacher
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- OVERVIEW -->
+
+<section id="teacher-overview"
+         class="dashboard-section active">
+
+
+    <div class="welcome-card teacher-welcome">
+
+        <div>
+
+            <span>
+                TEACHER PORTAL
+            </span>
+
+            <h1>
+                Good Evening, Mr. Ahmed! 👋
+            </h1>
+
+            <p>
+                Manage your classes, students and
+                academic activities.
+            </p>
+
+        </div>
+
+        <div class="welcome-icon">
+            👨‍🏫
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-cards">
+
+
+        <div class="dash-card blue">
+
+            <span>Total Students</span>
+
+            <h2>128</h2>
+
+            <p>
+                Across 4 classes
+            </p>
+
+        </div>
+
+
+        <div class="dash-card green">
+
+            <span>Average Attendance</span>
+
+            <h2>91%</h2>
+
+            <p>
+                This month
+            </p>
+
+        </div>
+
+
+        <div class="dash-card orange">
+
+            <span>Assignments</span>
+
+            <h2>12</h2>
+
+            <p>
+                Active assignments
+            </p>
+
+        </div>
+
+
+        <div class="dash-card purple">
+
+            <span>Classes Today</span>
+
+            <h2>5</h2>
+
+            <p>
+                Next class: 10:30 AM
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="dashboard-grid">
+
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h3>
+                    Today's Classes
+                </h3>
+
+            </div>
+
+
+            <div class="class-list">
+
+
+                <div class="class-item">
+
+                    <div class="time">
+                        08:00
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Mathematics
+                        </strong>
+
+                        <small>
+                            Class 10-A • Room 12
+                        </small>
+
+                    </div>
+
+                    <span class="class-status">
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="class-item">
+
+                    <div class="time">
+                        09:30
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Mathematics
+                        </strong>
+
+                        <small>
+                            Class 9-B • Room 8
+                        </small>
+
+                    </div>
+
+                    <span class="class-status active-class">
+                        Upcoming
+                    </span>
+
+                </div>
+
+
+                <div class="class-item">
+
+                    <div class="time">
+                        11:30
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Mathematics
+                        </strong>
+
+                        <small>
+                            Class 8-A • Room 5
+                        </small>
+
+                    </div>
+
+                    <span class="class-status">
+                        Upcoming
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h3>
+                    Quick Actions
+                </h3>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <button onclick="showTeacherSection('attendance')">
+                    ✅ Mark Attendance
+                </button>
+
+                <button onclick="showTeacherSection('assignments')">
+                    📝 Add Assignment
+                </button>
+
+                <button onclick="showTeacherSection('results')">
+                    🏆 Enter Results
+                </button>
+
+                <button onclick="showTeacherSection('announcements')">
+                    📢 Announcement
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ATTENDANCE -->
+
+<section id="teacher-attendance"
+         class="dashboard-section">
+
+    <div class="section-page-title">
+
+        <h2>Student Attendance</h2>
+
+        <p>
+            Select a class and mark today's attendance.
+        </p>
+
+    </div>
+
+
+    <div class="attendance-controls">
+
+        <select>
+
+            <option>Class 10-A</option>
+            <option>Class 9-B</option>
+            <option>Class 8-A</option>
+
+        </select>
+
+
+        <input type="date"
+               value="2026-08-23">
+
+
+        <button class="primary-small-btn">
+            Load Students
+        </button>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Roll No.</th>
+                    <th>Student Name</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+                    <td>01</td>
+                    <td>Ahmad Khan</td>
+                    <td>
+                        <button class="attendance-btn present">
+                            Present
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>02</td>
+                    <td>Hamza Ali</td>
+                    <td>
+                        <button class="attendance-btn present">
+                            Present
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>03</td>
+                    <td>Usman Ahmed</td>
+                    <td>
+                        <button class="attendance-btn absent">
+                            Absent
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>04</td>
+                    <td>Bilal Khan</td>
+                    <td>
+                        <button class="attendance-btn present">
+                            Present
+                        </button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- STUDENTS -->
+
+<section id="teacher-students"
+         class="dashboard-section">
+
+    <div class="section-page-title">
+
+        <h2>My Students</h2>
+
+        <p>
+            View students in your assigned classes.
+        </p>
+
+    </div>
+
+
+    <div class="student-grid">
+
+
+        <div class="student-card">
+
+            <div class="student-avatar">
+                AK
+            </div>
+
+            <h3>Ahmad Khan</h3>
+
+            <span>
+                Roll No: 01
+            </span>
+
+            <strong>
+                Class 10-A
+            </strong>
+
+        </div>
+
+
+        <div class="student-card">
+
+            <div class="student-avatar">
+                HA
+            </div>
+
+            <h3>Hamza Ali</h3>
+
+            <span>
+                Roll No: 02
+            </span>
+
+            <strong>
+                Class 10-A
+            </strong>
+
+        </div>
+
+
+        <div class="student-card">
+
+            <div class="student-avatar">
+                UA
+            </div>
+
+            <h3>Usman Ahmed</h3>
+
+            <span>
+                Roll No: 03
+            </span>
+
+            <strong>
+                Class 10-A
+            </strong>
+
+        </div>
+
+
+        <div class="student-card">
+
+            <div class="student-avatar">
+                BK
+            </div>
+
+            <h3>Bilal Khan</h3>
+
+            <span>
+                Roll No: 04
+            </span>
+
+            <strong>
+                Class 10-A
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ASSIGNMENTS -->
+
+<section id="teacher-assignments"
+         class="dashboard-section">
+
+    <div class="section-page-title">
+
+        <h2>Assignments</h2>
+
+        <p>
+            Create and manage student assignments.
+        </p>
+
+    </div>
+
+
+    <div class="form-panel">
+
+        <h3>
+            Create New Assignment
+        </h3>
+
+
+        <form onsubmit="addAssignment(event)">
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>
+                        Assignment Title
+                    </label>
+
+                    <input
+                        id="assignmentTitle"
+                        type="text"
+                        placeholder="Enter title"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Class
+                    </label>
+
+                    <select>
+
+                        <option>Class 10-A</option>
+                        <option>Class 9-B</option>
+                        <option>Class 8-A</option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Due Date
+                    </label>
+
+                    <input
+                        type="date"
+                        required>
+
+                </div>
+
+
+                <div class="full-width">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        placeholder="Write assignment instructions..."
+                        required></textarea>
+
+                </div>
+
+            </div>
+
+
+            <button class="primary-small-btn"
+                    type="submit">
+
+                Publish Assignment
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div id="newAssignmentMessage"
+         class="success-message">
+
+    </div>
+
+</section>
+
+
+<!-- RESULTS -->
+
+<section id="teacher-results"
+         class="dashboard-section">
+
+    <div class="section-page-title">
+
+        <h2>Student Results</h2>
+
+        <p>
+            Enter and manage examination marks.
+        </p>
+
+    </div>
+
+
+    <div class="form-panel">
+
+        <div class="form-grid">
+
+            <div>
+
+                <label>
+                    Class
+                </label>
+
+                <select>
+
+                    <option>Class 10-A</option>
+                    <option>Class 9-B</option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    Subject
+                </label>
+
+                <select>
+
+                    <option>Mathematics</option>
+                    <option>Physics</option>
+                    <option>English</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Roll</th>
+                    <th>Student</th>
+                    <th>Marks</th>
+                    <th>Total</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+                    <td>01</td>
+                    <td>Ahmad Khan</td>
+                    <td>
+                        <input class="marks-input" value="88">
+                    </td>
+                    <td>100</td>
+                </tr>
+
+                <tr>
+                    <td>02</td>
+                    <td>Hamza Ali</td>
+                    <td>
+                        <input class="marks-input" value="81">
+                    </td>
+                    <td>100</td>
+                </tr>
+
+                <tr>
+                    <td>03</td>
+                    <td>Usman Ahmed</td>
+                    <td>
+                        <input class="marks-input" value="75">
+                    </td>
+                    <td>100</td>
+                </tr>
+
+                <tr>
+                    <td>04</td>
+                    <td>Bilal Khan</td>
+                    <td>
+                        <input class="marks-input" value="92">
+                    </td>
+                    <td>100</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <button class="primary-small-btn">
+        Save Results
+    </button>
+
+</section>
+
+
+<!-- ANNOUNCEMENTS -->
+
+<section id="teacher-announcements"
+         class="dashboard-section">
+
+    <div class="section-page-title">
+
+        <h2>Announcements</h2>
+
+        <p>
+            Publish announcements for students.
+        </p>
+
+    </div>
+
+
+    <div class="form-panel">
+
+        <form onsubmit="publishAnnouncement(event)">
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>
+                        Announcement Title
+                    </label>
+
+                    <input
+                        id="announcementTitle"
+                        type="text"
+                        placeholder="Enter title"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Category
+                    </label>
+
+                    <select>
+
+                        <option>General</option>
+                        <option>Exam</option>
+                        <option>Event</option>
+                        <option>Holiday</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="full-width">
+
+                    <label>
+                        Message
+                    </label>
+
+                    <textarea
+                        id="announcementText"
+                        placeholder="Write announcement..."
+                        required></textarea>
+
+                </div>
+
+            </div>
+
+
+            <button class="primary-small-btn">
+                Publish Announcement
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div id="announcementMessage"
+         class="success-message">
+    </div>
+
+</section>
+
+
+</main>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
